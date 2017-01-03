@@ -3,7 +3,8 @@ from os.path import expanduser
 
 def setup():
     global img
-    global sorted_image_filename = "sorted.jpg"
+    global sorted_image_filename
+    sorted_image_filename = "sorted.jpg"
     original_filename = "IMG_0183.JPG"
     img = loadImage(original_filename)
     size(410, 600)
@@ -16,7 +17,7 @@ def draw():
     sorted_img.pixels = mergesort(img.pixels)
     sorted_img.updatePixels()
     image(sorted_img, 0, 0)
-    save(os.path.join(os.path.expanduser("~", "Downloads", sorted_image_filename))
+    save(os.path.join(os.path.expanduser("~"), "Downloads", sorted_image_filename))
 
 
 def mergesort(arr):
